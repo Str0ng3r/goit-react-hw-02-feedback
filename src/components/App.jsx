@@ -1,3 +1,5 @@
+import {Interfas} from './interfase/Interfase'
+
 export const App = () => {
   return (
     <div
@@ -10,7 +12,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <Interfas></Interfas>
     </div>
   );
 };
