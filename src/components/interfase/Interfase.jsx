@@ -6,6 +6,12 @@ export class Interfas extends Component {
     bad: 0
   }
 
+  countTotalFeedback = () => {
+    return this.state.good + this.state.neutral + this.state.bad
+  }
+  countPositiveFeedbackPercentage = () => {
+    return (this.state.good / this.countTotalFeedback()) * 100
+  }
   updateGood = () => {
     this.setState(prevState => ({
       good: prevState.good + 1
@@ -38,6 +44,8 @@ export class Interfas extends Component {
           <li>Good:{this.state.good}</li>
           <li>Neutral:{this.state.neutral}</li>
           <li>Bad:{this.state.bad}</li>
+          <li>Total:{this.countTotalFeedback()}</li>
+          <li>Positive Feedback:{this.countPositiveFeedbackPercentage().toFixed(2)}%</li>
         </ul>
       </div>
     )
