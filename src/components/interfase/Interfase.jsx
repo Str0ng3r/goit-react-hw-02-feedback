@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { StatsRend } from "./Statistics";
 export class Interfas extends Component {
   state = {
     good: 0,
@@ -39,14 +40,7 @@ export class Interfas extends Component {
           <li><button onClick={this.updateNeutral}>Neutral</button></li>
           <li><button onClick={this.updateBad}>Bad</button></li>
         </ul>
-        <h2>Statistics</h2>
-        <ul>
-          <li>Good:{this.state.good}</li>
-          <li>Neutral:{this.state.neutral}</li>
-          <li>Bad:{this.state.bad}</li>
-          <li>Total:{this.countTotalFeedback()}</li>
-          <li>Positive Feedback:{this.countPositiveFeedbackPercentage().toFixed(2)}%</li>
-        </ul>
+        <StatsRend good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()}></StatsRend>
       </div>
     )
   }
