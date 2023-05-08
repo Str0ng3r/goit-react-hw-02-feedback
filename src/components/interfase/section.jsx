@@ -1,4 +1,4 @@
-
+import propTypes from 'prop-types';
 
 export const RenderSection = ({title,children}) => {
 return (
@@ -7,4 +7,8 @@ return (
     {children}
     </section>
 )
+}
+
+RenderSection.propTypes = {
+    title:propTypes.string
 }

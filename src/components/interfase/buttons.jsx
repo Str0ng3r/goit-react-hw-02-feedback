@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 export const ButtonsRender = ({updateGood,updateNeutral,updateBad}) => {
     return (
         <ul>
@@ -6,4 +8,10 @@ export const ButtonsRender = ({updateGood,updateNeutral,updateBad}) => {
           <li><button onClick={updateBad}>Bad</button></li>
         </ul>
     )
+}
+
+ButtonsRender.propTypes = {
+  updateGood:propTypes.func,
+  updateBad:propTypes.func,
+  updateNeutral:propTypes.func
 }

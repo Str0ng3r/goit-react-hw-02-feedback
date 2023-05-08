@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 export const StatsRend = ({
   good,
   neutral,
@@ -18,3 +19,10 @@ export const StatsRend = ({
     </div>
   );
 };
+StatsRend.propTypes = {
+  good:propTypes.number,
+  neutral:propTypes.number,
+  bad:propTypes.number,
+  total:propTypes.func,
+  positivePercentage:propTypes.func
+}
